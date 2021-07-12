@@ -1,0 +1,49 @@
+@mixin button($color, $hover-color, $py, $px) {
+    background-color: $color;
+    padding: $py $px;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    border: 0;
+    text-decoration: none;
+    &:hover {
+        box-shadow: 0px 2px 10px 5px $hover-color;
+    }
+    transition: box-shadow 0.2s linear;
+    cursor: pointer;
+}
+
+@mixin text($fs, $fw, $color) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+    text-decoration: none;
+}
+
+@mixin search-input($color, $text-color, $py) {
+    border: 1px solid $color;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+
+    input {
+        &:focus {
+            outline: none;
+        }
+        border: 0;
+        padding: $py 2rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $text-color;
+        background-color: transparent;
+    }
+    
+    .search-btn {
+        display: inline-block;
+        @include button($color, transparent, $py, 1.5rem);
+        padding-top: $py;
+        padding-bottom: $py;
+        border-radius: 0;
+    }
+}

@@ -1,0 +1,110 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/style/variable.scss';
+
+.detail {
+    .background {
+        width: 100%;
+        min-height: 40rem;
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: -1;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(to top, $primary-color, rgba(4, 4, 61, 0.7), $btn-hover-color);
+            z-index: 0;
+        }
+    }
+    .container {
+        margin-top: -30rem;
+    }
+    .detail-content {
+        margin-bottom: 10rem;
+        img {
+            width: 24rem;
+            height: 24rem;
+            object-fit: cover;
+            box-shadow: 0 5px 15px 5px rgba(255, 255, 255, 0.6) ;
+            border-radius: 1.5rem;
+            margin-right: 3rem;
+        }
+        .info {
+            padding-top: 3rem;
+            h1 {
+                @include text(2.2rem, 600, white);
+                line-height: 2.4rem;
+                letter-spacing: 1px;
+                margin-bottom: 1rem;
+            }
+            h2 {
+                @include text(1.6rem, 600, white);  
+                line-height: 2rem;
+                margin-bottom: 1rem;
+            }
+            p {
+                @include text(1.4rem, 600, rgba(255, 255, 255, 0.8));
+                margin-bottom: 1rem;
+            }
+            .btn {
+                @include button($primary-color, $btn-hover-color, 1.2rem, 3rem);
+                margin-top: 2rem;
+                i {
+                    padding-right: 1rem;
+                }
+            }
+        }
+    }
+    .related-list {
+        padding-top: 2rem;
+        width: 100%;
+        .col {
+            width: 30%;
+            padding-right: 2rem;
+        }
+        .col-1-2 {
+            width: 10%;
+            padding-right: 2rem;
+        }
+        .related-header {
+            @include text(1.8rem, 600, $primary-color); 
+            border-bottom: 2.5px solid $primary-color;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        .related-body {
+            .related-item {
+                position: relative;
+                &:hover {
+                    color: $primary-color;
+                    a {
+                        color: $primary-color
+                    }
+                } 
+                &, &  a {
+                    @include text(1.5rem, 600, $text-color);
+                    line-height: 2rem;
+                    margin-bottom: 2.5rem;
+                    padding-top: 0.5rem;
+                    transition: all 0.2s linear;
+                }
+                .btn {
+                    @include button($primary-color, $btn-hover-color, 0.5rem, 2rem);
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    i {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+            
+        }
+    }
+}

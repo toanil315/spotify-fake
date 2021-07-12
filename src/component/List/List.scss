@@ -1,0 +1,16 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/style/variable.scss';
+
+
+.list {
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+    .row {
+        & > div {
+            width: 21.1%;
+            .card {
+                width: 100%;
+            }
+        }
+    }
+}

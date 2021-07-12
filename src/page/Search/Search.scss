@@ -1,0 +1,22 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/style/variable.scss';
+
+.search {
+    h2 {
+        @include text(2.4rem, 600, $primary-color);
+        padding: 6rem 0 4rem;
+    }
+    .search-content {
+        flex-flow: row wrap;
+        justify-content: space-between;
+        .search-item {
+            width: 21.1%;
+            margin-bottom: 3rem;
+        }
+        .no-item {
+            display: block;
+            width: 16rem;
+            margin: 4rem auto 0;
+        }
+    }
+}

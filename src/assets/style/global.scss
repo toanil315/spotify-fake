@@ -1,0 +1,39 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/style/variable.scss';
+
+.container {
+    max-width: 117rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.row {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.title {
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    h1 {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 2.5rem;
+            left: -1rem;
+
+            width: 80%;
+            height: 0.5rem;
+
+            background: radial-gradient(ellipse closest-side, #ff4865 20%, transparent 80%);
+        }
+        @include text(1.8rem, 600, $primary-color);
+    }
+    a {
+        @include text(1.6rem, 500, $text-color);
+    }
+}

@@ -1,0 +1,38 @@
+@import "../../assets/style/variable.scss";
+@import "../../assets/style/mixin.scss";
+
+.banner {
+    width: 100%;
+    background-color: $banner-color;
+    padding-top: 4rem;
+    img {
+        margin-right: 6rem;
+    }
+    .content {
+        p {
+            font-size: 3rem;
+            font-weight: 600;
+            color: $text-color;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            &.primary {
+                color: $primary-color;
+            }
+        }
+        span {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            line-height: 3rem;
+            color: $text-color;
+            word-spacing: 3px;
+        }
+        .user-ctrl {
+            margin-top: 6rem;
+            .btn {
+                @include button($primary-color, $btn-hover-color, 1.2rem, 3rem);
+                margin-right: 2rem;
+            }
+        }
+    }
+}

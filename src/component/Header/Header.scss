@@ -1,0 +1,86 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/style/variable.scss';
+
+.header {
+    padding: 1rem 0;
+    width: 100%;
+    box-shadow: 0px 2px 10px rgba(0,0,0, 0.1);
+    position: relative;
+    z-index: 10;
+    &.fixed {
+        position: fixed;
+    }
+    .logo {
+        margin-right: 2rem;
+    }
+    .search-input {
+        position: relative;
+        @include search-input($primary-color, $text-color, 1rem);
+        .search-output {
+            display: none;
+            position: absolute;
+            top: 110%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0px 2px 10px rgba(0,0,0, 0.3);
+            border-radius: 3px;
+            padding: 1rem;
+            &:hover {
+                display: block;
+            }
+            &.show {
+                display: block;
+            }
+            ul {
+                list-style-type: none;
+                padding-left: 0;
+                .no-item {
+                    display: block;
+                    width: 10rem;
+                    object-fit: cover;
+                    margin: 0 auto;
+                }
+                li {
+                    margin-bottom: 1rem;
+                    .item {
+                        &:hover {
+                            color: $primary-color
+                        }
+                        @include text(1.5rem, 600, $text-color);
+                        line-height: 2rem;
+                        padding-bottom: 1rem;
+                        transition: color 0.2s linear;
+                        cursor: pointer;
+                    }
+                }
+            }
+            
+        }
+    }
+    .user-ctrl {
+        margin-left: auto;
+        .avartar {
+            display: block;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+        }
+        .btn {
+            margin-left: 2rem;
+            border: 0;
+            @include button($primary-color, $btn-hover-color, 0.75rem, 2rem)
+        }
+        span {
+            font-size: 1.5rem;
+            color: $primary-color;
+            padding-right: 2rem;
+            & img {
+                display: inline-block;
+                margin-left: 1rem;
+                padding-top: 2px;
+            }
+            cursor: pointer;
+        }
+    }
+}

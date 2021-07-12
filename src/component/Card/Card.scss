@@ -1,0 +1,63 @@
+@import '../../assets/style/mixin.scss';
+@import '../../assets/style/variable.scss';
+
+.card {
+    &:hover {
+        .avartar {
+            .overlay {
+                opacity: 1;
+                img {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+        }
+        .content {
+            .name {
+                color: $primary-color;
+            }
+        }
+    }
+    .avartar {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        & > img {
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(to top, $primary-color, rgba(255, 72, 101, 0));
+            border-radius: 1rem;
+            opacity: 0;
+            transition: all 0.25s linear;
+            img {
+                transform: scale(3.5);
+                opacity: 0;
+                transition: all 0.25s linear;
+                cursor: pointer;
+            }
+            
+        }
+    }
+    .content {
+        padding-top: 2rem;
+        display: inline-block;
+        .name {
+            @include text(1.6rem, 600, black);
+            cursor: pointer;
+            transition: color 0.25s linear
+        }
+        @include text(1.5rem, 500, $text-color);
+        margin-bottom: 0.75rem;
+    }
+}

@@ -1,0 +1,17 @@
+.loading {
+    &.hide {
+        display: none;
+    }
+    display: block;
+    position: fixed; 
+    width: 100vw;
+    height: 100vh;
+    background-color: #14182A;
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    z-index: 20;
+}
