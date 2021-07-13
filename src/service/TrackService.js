@@ -2,8 +2,8 @@ import { ID_OF_TOP_PLAYLIST, SEARCH_TYPE } from "../utils/config";
 import BaseService from "./BaseService";
 
 class TrackService extends BaseService {
-    searchTrackService = (name,limit) => {
-        return this.get(`https://api.spotify.com/v1/search?q=${name}&type=${SEARCH_TYPE}&limit=${limit}`);
+    searchTrackService = (name, limit, offset) => {
+        return this.get(`https://api.spotify.com/v1/search?q=${name}&type=${SEARCH_TYPE}&offset=${offset}&limit=${limit}`);
     }
     getTopTracksService = () => {
         return this.get(`https://api.spotify.com/v1/playlists/${ID_OF_TOP_PLAYLIST}`);

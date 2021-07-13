@@ -1,10 +1,10 @@
 import { trackService } from "../../../service/TrackService";
 import { STATUS_CODE } from "../../../utils/config";
 
-export const searchTrackAction = (name, limit) => {
+export const searchTrackAction = (name, limit, offset = 0) => {
     return async (dispatch) => {
         try {
-            const {data, status} = await trackService.searchTrackService(name, limit);
+            const {data, status} = await trackService.searchTrackService(name, limit, offset);
             if(status === STATUS_CODE.SUCCESS) {
                 return data;
             }

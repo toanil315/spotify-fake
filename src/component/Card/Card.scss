@@ -50,14 +50,16 @@
         }
     }
     .content {
-        padding-top: 2rem;
+        padding-top: 1rem;
         display: inline-block;
+        width: 100%;
         .name {
             @include text(1.6rem, 600, black);
+            line-height: 2.2rem;
             cursor: pointer;
             transition: color 0.25s linear
         }
         @include text(1.5rem, 500, $text-color);
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
     }
 }

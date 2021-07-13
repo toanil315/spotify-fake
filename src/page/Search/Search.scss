@@ -19,4 +19,10 @@
             margin: 4rem auto 0;
         }
     }
+    .btn {
+        display: block;
+        @include button($primary-color, $btn-hover-color, 1.2rem, 3rem);
+        width: 12%;
+        margin: 3rem auto 0;
+    }
 }
